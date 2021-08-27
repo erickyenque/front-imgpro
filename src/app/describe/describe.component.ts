@@ -5,6 +5,8 @@ import { forkJoin } from 'rxjs';
 import { ImgproService } from '../services/imgpro.service';
 import { ImageResponse } from '../types/response/ImageResponse';
 
+import { NgxSpinnerService } from "ngx-spinner";
+
 @Component({
   selector: 'app-describe',
   templateUrl: './describe.component.html',
@@ -20,7 +22,8 @@ export class DescribeComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private imgService: ImgproService
+    private imgService: ImgproService,
+    private spinner: NgxSpinnerService
   ) { 
     this.filenames = JSON.parse(this.router.getCurrentNavigation().extras.state.filenames);
   }
@@ -58,16 +61,18 @@ export class DescribeComponent implements OnInit {
   }
 
   getImage() { 
-    this.loadImage = false;   
+    this.loadImage = false; 
+    this.spinner.show();  
     const request = this.filenames.map(f => this.imgService.getImage(f));
     forkJoin(request).subscribe(resp => {
       console.log(resp);
       this.images = resp;
       this.loadImage = true;  
+      this.spinner.hide();
     }, error => console.log(error));
   }
 
-  generateImage(base64) {
+  generateImage(base64: string) {
     return 'data:image/jpg;base64,' + base64;
   }
 }

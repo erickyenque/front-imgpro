@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ImgproService } from '../services/imgpro.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-upload',
@@ -11,7 +12,8 @@ export class UploadComponent implements OnInit {
 
   constructor(
     private imgService: ImgproService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -19,20 +21,23 @@ export class UploadComponent implements OnInit {
 
   files: File[] = [];
 
-  onSelect(event) {
+  onSelect(event: any) {
     console.log(event);
     this.files.push(...event.addedFiles);
   }
 
-  onRemove(event) {
+  onRemove(event: any) {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
 
   processImages() {
+    this.spinner.show();
+
     this.imgService.upload(this.files).subscribe(resp => {
       this.imgService.processing(resp).subscribe(response => {
         this.router.navigate(['/describe'], { state: { filenames: JSON.stringify(response.names) }});
+        this.spinner.hide();
       })      
     }) 
   }

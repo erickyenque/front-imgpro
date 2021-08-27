@@ -15,7 +15,7 @@ export class ImgproService {
   private ENPOINT_PROCESSING = "/processing";
   private ENPOINT_IMAGE = "/image";
 
-  private getEnpoint(endpoint) {
+  private getEnpoint(endpoint: string) {
     return `${ServerConfig.getServer()}${endpoint}` 
   }
 
