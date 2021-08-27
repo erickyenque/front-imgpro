@@ -1,0 +1,36 @@
+#magazine {
+    width: 800px;
+    height: 400px;
+}
+  
+#magazine .turn-page {
+    background-color: white;
+    padding: 50px 20px;
+    border: 1px solid #ccc;
+}
+
+.image {
+    border-radius: 10px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.description {
+    font-size: 12px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.catalogue {
+    
+}
+
+.entity {
+    text-align: center;
+    vertical-align: middle;
+}
