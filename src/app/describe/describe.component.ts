@@ -75,4 +75,8 @@ export class DescribeComponent implements OnInit {
   generateImage(base64: string) {
     return 'data:image/jpg;base64,' + base64;
   }
+
+  createCatalogue() {
+    this.router.navigate(['/catalogue'], { state: { filenames: JSON.stringify(this.filenames) }});
+  }
 }

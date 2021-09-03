@@ -5,15 +5,17 @@ import { UploadResponse } from '../types/response/UploadResponse';
 import { FileRequest } from '../types/request/FileRequest';
 import { ProcessingResponse } from '../types/response/ProcessingResponse';
 import { ImageResponse } from '../types/response/ImageResponse';
+import { CompressResponse } from '../types/response/CompressResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImgproService {
 
-  private ENPOINT_UPLOAD = "/upload";
-  private ENPOINT_PROCESSING = "/processing";
-  private ENPOINT_IMAGE = "/image";
+  private ENDPOINT_UPLOAD = "/upload";
+  private ENDPOINT_PROCESSING = "/processing";
+  private ENDPOINT_IMAGE = "/image";
+  private ENDPOINT_COMPRESS = "/compress";
 
   private getEnpoint(endpoint: string) {
     return `${ServerConfig.getServer()}${endpoint}` 
@@ -28,16 +30,20 @@ export class ImgproService {
     files.forEach(f => {
       formData.append('images', f, f.name);
     })    
-    return this.http.post<UploadResponse>(this.getEnpoint(this.ENPOINT_UPLOAD), formData);
+    return this.http.post<UploadResponse>(this.getEnpoint(this.ENDPOINT_UPLOAD), formData);
   }
 
   processing(fileRequest: FileRequest) {
-    return this.http.post<ProcessingResponse>(this.getEnpoint(this.ENPOINT_PROCESSING), fileRequest);
+    return this.http.post<ProcessingResponse>(this.getEnpoint(this.ENDPOINT_PROCESSING), fileRequest);
   }
 
   getImage(filename: string) {
     let httpParams = new HttpParams().append("filename", filename);
-    return this.http.get<ImageResponse>(this.getEnpoint(this.ENPOINT_IMAGE), { params: httpParams });
+    return this.http.get<ImageResponse>(this.getEnpoint(this.ENDPOINT_IMAGE), { params: httpParams });
+  }
+
+  compress(fileRequest: FileRequest) {
+    return this.http.post<CompressResponse>(this.getEnpoint(this.ENDPOINT_COMPRESS), fileRequest);
   }
 
 }
