@@ -1,12 +1,23 @@
-#magazine {
+#flipbook {
     width: 800px;
-    height: 400px;
+    height: 600px;
 }
   
-#magazine .turn-page {
+#flipbook .turn-page {
     background-color: white;
     padding: 50px 20px;
     border: 1px solid #ccc;
+}
+
+#flipbook .hard {
+    
+}
+
+#flipbook .hard .footer {
+    position: absolute;
+    bottom: 0;
+    font-style: italic;
+    right: 10px;
 }
 
 .image {
@@ -14,6 +25,8 @@
 }
 
 .title {
+    text-align: center;
+    font-size: 30px;
     font-weight: bold;
 }
 

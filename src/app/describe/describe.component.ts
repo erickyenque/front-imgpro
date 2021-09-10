@@ -77,6 +77,6 @@ export class DescribeComponent implements OnInit {
   }
 
   createCatalogue() {
-    this.router.navigate(['/catalogue'], { state: { filenames: JSON.stringify(this.filenames) }});
+    this.router.navigate(['/catalogue'], { state: { images: JSON.stringify(this.images), filenames: JSON.stringify(this.filenames), data: JSON.stringify(this.form.getRawValue()) }});
   }
 }
