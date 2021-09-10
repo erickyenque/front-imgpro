@@ -64,16 +64,16 @@ export class CatalogueComponent implements OnInit {
       }
       if((index + 1) < _length){
         row2 = `
-          <div class="row mt-2">
+          <div ${attr} class="row mt-2">
             <div class="col-6">
-              <img src="${'data:image/jpg;base64,' + this.images[index + 1].base64}" class="img-fluid image">
+              <img ${attr} src="${'data:image/jpg;base64,' + this.images[index + 1].base64}" class="img-fluid image">
             </div>
-            <div class="col-4">
-              <h3 class="title">${this.data.product[index + 1].title}</h3>
-              <p class="description">${this.data.product[index + 1].description}</p>
+            <div ${attr} class="col-4">
+              <h3 ${attr}class="title">${this.data.product[index + 1].title}</h3>
+              <p ${attr} class="description">${this.data.product[index + 1].description}</p>
             </div>
-            <div class="col-2">
-              <span class="price">${this.data.product[index + 1].price}</span>
+            <div ${attr}class="col-2">
+              <span ${attr} class="price">${this.data.product[index + 1].price}</span>
             </div>
           </div>`;
       }
@@ -124,7 +124,7 @@ export class CatalogueComponent implements OnInit {
     let x = 0;
     this.data.product.forEach((product, index) => {
       var imgData = 'data:image/jpg;base64,' + this.images[index].base64;
-      doc.addImage(imgData, 'JPEG', 10, 10 + x, 100, 120);
+      doc.addImage(imgData, 'JPEG', 10, 10 + x, 150, 150);
       doc.text(product.title, 120, 10 + y + x);
       doc.text(product.description, 120, 20 + y + x);
       doc.setDrawColor(0);
