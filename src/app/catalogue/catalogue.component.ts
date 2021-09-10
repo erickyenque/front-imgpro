@@ -49,7 +49,7 @@ export class CatalogueComponent implements OnInit {
       let row1 = '', row2 = '', row3 = '';
       if(index < _length){
         row1 = `
-          <div ${attr} class="row">
+          <div ${attr} class="row mt-2">
             <div ${attr} class="col-6">
               <img ${attr} src="${'data:image/jpg;base64,' + this.images[index].base64}" class="img-fluid image">
             </div>
@@ -64,7 +64,7 @@ export class CatalogueComponent implements OnInit {
       }
       if((index + 1) < _length){
         row2 = `
-          <div class="row">
+          <div class="row mt-2">
             <div class="col-6">
               <img src="${'data:image/jpg;base64,' + this.images[index + 1].base64}" class="img-fluid image">
             </div>
@@ -79,7 +79,7 @@ export class CatalogueComponent implements OnInit {
       }
       if((index + 2) < _length) {
         row3 = `
-          <div ${attr} class="row">
+          <div ${attr} class="row mt-2">
             <div ${attr} class="col-6">
               <img ${attr} src="${'data:image/jpg;base64,' + this.images[index + 2].base64}" class="img-fluid image">
             </div>
@@ -94,9 +94,8 @@ export class CatalogueComponent implements OnInit {
       }
       $('#flipbook').append(`<div ${attr}>${row1 + row2 + row3}</div>`);
     }
-    //$('#flipbook').append(`<div></div>`);
-    //$('#flipbook').append(`<div class="hard"></div>`);
-    //$('#flipbook').append(`<div class="hard"></div>`);
+    $('#flipbook').append(`<div ${attr} class="hard"></div>`);
+    $('#flipbook').append(`<div ${attr} class="hard"></div>`);
   }
 
   @HostListener('window:keyup', ['$event'])
