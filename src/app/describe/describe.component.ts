@@ -50,7 +50,7 @@ export class DescribeComponent implements OnInit {
     const productGroup = this.fb.group({
       title: new FormControl(''),
       description: new FormControl(''),
-      price: new FormControl('')
+      price: new FormControl(0)
     });
   
     this.product.push(productGroup);

@@ -6,7 +6,7 @@
                 <p>Añade información importante del producto.</p>
             </div>
             <div class="col-2">
-                <button type="button" class="btn btn-primary float-right" (click)="createCatalogue()">CREAR CATÁLOGO</button>
+                <button type="button" class="btn btn-primary float-right" (click)="createCatalogue()"><i class="fas fa-book-open"></i> CREAR CATÁLOGO</button>
             </div>
         </div>
     
@@ -22,18 +22,18 @@
                 </div>
                 <div class="col-4">
                     <div class="form-group">
-                        <label for="titleInputEmail1">TITULO:</label>
+                        <label for="titleInputEmail1"><b>Título:</b></label>
                         <input type="text" class="form-control" formControlName="title">
                     </div>
-                    <div class="form-group">
-                        <label for="descriptionFormControlTextarea1">Describe al producto:</label>
+                    <div class="form-group mt-3">
+                        <label for="descriptionFormControlTextarea1"><b>Describe al producto:</b></label>
                         <textarea class="form-control" rows="3" formControlName="description"></textarea>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="form-group">
-                        <label for="priceInputEmail1">Precio (S/):</label>
-                        <input type="number" class="form-control" formControlName="price">
+                        <label for="priceInputEmail1"><b>Precio (S/):</b></label>
+                        <input type="number" class="form-control" formControlName="price" min="0">
                     </div>
                 </div>
                 <div class="col-12">
