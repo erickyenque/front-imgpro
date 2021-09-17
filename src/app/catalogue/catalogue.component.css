@@ -6,11 +6,10 @@
 #flipbook .turn-page {
     background-color: white;
     padding: 30px 20px;
-    border: 1px solid #ccc;
 }
 
 #flipbook .hard {
-    
+    background-color: #306090;
 }
 
 #flipbook .hard .footer {
@@ -47,3 +46,168 @@
     text-align: center;
     vertical-align: middle;
 }
+
+.title_catalogue {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitle_catalogue {
+    color: white;
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    font-weight: bold;
+}
+
+.portada1 {
+    position: absolute;
+    top: 180px;
+    left: 10px;
+    border: 5px solid white;
+    border-radius: 150px;
+    background: #306090;
+    width: 250px;
+}
+
+.portada1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.portada2 {
+    position: absolute;
+    top: 110px;
+    right: 40px;
+    border: 5px solid white;
+    border-radius: 150px;
+    background: #306090;
+    width: 180px;
+    padding: 20px;
+}
+
+.portada2 img {
+    width: 100%;
+    height: 100%;
+}
+
+.portada3 {
+    position: absolute;
+    bottom: 160px;
+    right: 80px;
+    border: 5px solid white;
+    border-radius: 150px;
+    background: #306090;
+    width: 130px;
+    padding: 10px;
+}
+
+.portada3 img {
+    width: 100%;
+    height: 100%;
+}
+
+.contenido {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.icon {
+    width: 20px;
+}
+
+.pagina {
+    background-image: url("../../assets/fondo.png");
+    background-size: cover;
+}
+
+.estrella {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 30px;
+}
+
+.estrella1 {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 15px;
+}
+
+.estrella2 {
+    position: absolute;
+    top: 10px;
+    left: 170px;
+    width: 15px;
+}
+
+.estrella3 {
+    position: absolute;
+    top: 15px;
+    left: 260px;
+    width: 15px;
+}
+
+.estrella4 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+}
+
+.estrella5 {
+    position: absolute;
+    top: 140px;
+    left: 250px;
+    width: 15px;
+}
+
+.estrella6 {
+    position: absolute;
+    bottom: 150px;
+    left: 10px;
+    width: 30px;
+}
+
+.estrella7 {
+    position: absolute;
+    bottom: 120px;
+    left: 30px;
+    width: 15px;
+}
+
+.estrella8 {
+    position: absolute;
+    bottom: 130px;
+    left: 120px;
+    width: 15px;
+}
+
+.estrella9 {
+    position: absolute;
+    bottom: 120px;
+    left: 200px;
+    width: 15px;
+}
+
+.estrella10 {
+    position: absolute;
+    bottom: 140px;
+    left: 250px;
+    width: 15px;
+}
+
+.estrella11 {
+    position: absolute;
+    bottom: 110px;
+    right: 120px;
+    width: 30px;
+}
+
